@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Pomodoro Timer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script> <!-- for bounce -->
+    <script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
+    <script src="./libs/jss.min.js"></script>  <!-- manipulate css in javascript from https://github.com/Box9/jss-->
+    <script src="./pomodoro.js"></script> <!-- needs / as \ doesn't work in firefox -->
+    <link rel="stylesheet" href="./pomodoro.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        Pomodoro Timer
+      </div>
+
+      <!-- time class used to change colour of text in work or rest from javascipt.  -->
+      <div id="time">00:00</div>
+
+      <!-- need this image div for bounce to use in javascript as it works on divs -->
+      <div class="image">
+        <!-- id for javascript to load image. class used to swap big and small image -->
+        <img id="tomato" class="big-tomato"  alt="tomato"/>  
+      </div> 
+
+      <div class="time-button-group"> 
+        <div class="button-titles">
+          <label class="lb-work-time">Work Time</label>
+          <label class="lb-rest-time">Rest Time</label>
+        </div>
+
+        <div class="work-buttons">  
+          <button  type="button" class="time-buttons btn-work" id="less-work">-</button>
+          <span id="work-time" >01</span>
+          <button type="button" class="time-buttons btn-work" id="more-work">+</button>
+        </div>
+
+        <div class="rest-buttons">
+          <button type="button" class="time-buttons btn-rest" id="less-rest">-</button>
+          <label id="rest-time">01</label>
+          <button type="button" class="time-buttons btn-rest" id="more-rest">+</button>
+        </div>
+      </div>
+
+      <button id="start-button" type="button">Start</button>
+
+    </div>
+  </body>
+</html>

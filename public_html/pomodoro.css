@@ -1,0 +1,211 @@
+/* 
+    Created on : 08-Feb-2016, 15:51:27
+    Author     : Tony Nicol
+*/
+/* Import 7 segment font */
+@font-face {
+  font-family: "seven segment";
+  src: url("./font/digital-7.woff");
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* iPhone 3/4/5 LG Optimus S, Sansung Galaxy S2/3/4, ASUS Galaxy 7 */
+@media screen and (max-width: 320px) {
+  .wrapper {
+    width: 300px; 
+    margin-top: 5px;
+    margin-left: 200px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  #time {
+    font-size: 50px;
+    margin-bottom: 10px; 
+  }
+
+  .time-button-group {
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #start-button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* use this for anything above 320 but max of 360. Left max off as this app is ok for anything over 320 */
+/*@media screen and (min-width: 321px) and (max-width: 360px){*/
+@media screen and (min-width: 321px){
+  .wrapper {
+    margin-top: 10px;
+    width: 340px; 
+  }
+
+  .title {
+    font-size: 35px;
+
+  }
+
+  #time {
+    font-size: 80px;
+    margin-bottom: 25px; 
+  }
+
+  .time-button-group {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+
+  #start-button {
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+}
+
+
+/* Wrap the whole app up and centre in web page */
+/* Width varied in media query */
+.wrapper {
+  font-family: "Helvetica";
+  font-weight: bold;
+  margin-left: auto;     /* Auto on left and  right will centre the div */
+  margin-right: auto;
+  border-width: 8px;
+  border-radius: 20px;
+  border-style: ridge;
+  padding: 0px;
+  background-color: #dce2cf;
+  border-color: #ccdea6;
+}
+
+/* Font size set in media query */
+.title {
+  font-family: "comic sans MS", Helvtica;
+  margin-top: 10px;
+  text-align: center;
+  color: #6475f4;
+  text-shadow:0 1px 0 rgba(0,0,0,0.75), 1px 1px 0 rgba(0,0,0,0.75);
+}
+
+/* Font size set in media query */
+/* Javascript changes the color property of this when in work or rest */
+#time {
+  font-family: "seven segment", "impact", "Courier New", Courier, monospace;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.small-tomato {
+  -ms-transform: scale(0.8,0.8);     /* IE 9 */
+  -webkit-transform: scale(0.8,0.8); /* Safari */
+  transform: scale(0.8,0.8);
+}
+
+.big-tomato {
+  -ms-transform: scale(1,1); /* IE 9 */
+  -webkit-transform: scale(1,1); /* Safari */
+  transform: scale(1,1);
+}
+
+.button-titles {
+  font-size: 1.2em;  /* size work and rest fonts at same time */
+  margin-bottom: 10px;
+}
+
+.lb-work-time {
+  margin-left: 10px;
+  color: #ee3726;
+}
+
+.lb-rest-time {
+  margin-left: 65px;
+  color: green;
+}
+
+.time-buttons, #start-button {
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 36px; /* size and space based on fixed calculator width */
+  height: 36px;
+  border-color: #c9c9c9;
+  border-radius: 10px;
+  background-color: #d9e1c7; /* main button colour */
+  text-shadow: 0px  1px 0px #fff; /* make text look indented */
+}
+
+/* When button is pressed move it down a bit */
+.time-buttons:active, #start-button:active {
+  -webkit-transform: translate(0, 2px);
+  -moz-transform: translate(0, 2px);
+  transform: translate(0px, 2px);
+}
+
+.time-buttons:hover, #start-button:hover {
+  color: blue;
+}
+
+/* Get rid of chrome's blue focus box when button is presses */
+.time-buttons:focus, #start-button:focus {
+  outline: none;
+  background-color: #c9d1b7; /* darken colour for users tabbing */
+}
+
+
+.rest-buttons, .work-buttons{
+  display: inline; /* Use this to put inline as float will ride on top of lower elements */
+}
+
+.btn-work {
+  color: #ee3726;
+}
+
+.btn-rest {
+  color: green;
+}
+.work-buttons {
+  margin-left: 0px;
+  color: #ee3726;
+}
+
+.rest-buttons {
+  margin-left: 48px;
+  color: green;
+}
+
+/* directly style the image as a block so it can be centred */
+img#tomato{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Margin top and bottom in media query */
+#start-button {
+  display: block; /* Need this for the auto margins to centre. Thought buttons were block elements .... */
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  font-weight: normal;
+  color: #4446ff;
+}
+
+
+#work-time, #rest-time {
+  font-family: "courier new"; /* keep same spacing for each number */
+  font-size: 1.7em;
+  font-weight: bold;
+  text-shadow: 0px  1px 0px #fff, 0px  1px 1px #fff;; /* make text look indented */
+  padding:0px
+}
